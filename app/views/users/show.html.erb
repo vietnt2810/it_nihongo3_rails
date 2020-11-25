@@ -1,6 +1,9 @@
 <hr/>
 <% if user_signed_in? %>
     <h1>PROFILE</h1>
-    <h3>MAIL ADDRESS</h3>
-    <%= current_user.email %>
+    Username: <%= current_user.name %>
+    <br/>
+    Age: <%= current_user.age %>
+    <br/>
+    Mail address: <%= current_user.email %>
 <% end %>
