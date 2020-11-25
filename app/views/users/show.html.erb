@@ -1,6 +1,9 @@
 <hr/>
 <% if user_signed_in? %>
     <h1>PROFILE</h1>
+    <% if current_user.avatar.attached? %>
+     <%= image_tag current_user.avatar %>
+    <% end %>
     Username: <%= current_user.name %>
     <br/>
     Age: <%= current_user.age %>
