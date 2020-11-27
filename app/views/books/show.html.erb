@@ -18,6 +18,18 @@
      <%= image_tag @book.image %>
    <% end %>
 </p>
+<h3>What do you think about this book?</h3>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<h2>Review</h2>
+<%= form_with(model: @book_review, local: true) do |form| %>
+  <div class= "field">
+    <%= form.text_area :review %>
+    <%= form.hidden_field :book_id, :value => @book.id %>
+  </div>
+  <div class="actions">
+     <%= form.submit %>
+  </div>
+ <% end %>
+
+<%= link_to 'Edit', edit_book_path(@book) %> <br/>
+<%= link_to 'Back', books_path %> <br/>
